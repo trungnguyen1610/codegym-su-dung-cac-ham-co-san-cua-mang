@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chèn dấu - giữ hai số chẵn</title>
+</head>
+
+<body>
+    <script>
+        const stringnumbers = prompt("Nhập vào 1 dãy các số ");
+        convertStringtoArray(stringnumbers);
+        function convertStringtoArray(num) {
+            //chuyen chuoi tren ve  string
+            const str = num.toString();
+            //gan gia tri dau tien cua chuoi vao mang
+            const result = [str[0]];
+            //duyet va them phan tu vao mang vs dieu kien neu 2 so lien ke nhau deu chia het cho 2 thi them - con k thoa man thi chi day vao mang
+            //i = 1 vi duyet tu cac phan tu tiep theo trong str vi da coi gia tri dau tien la str[0]
+            for (i = 1; i < str.length; i++) {
+                if (str[i - 1] % 2 == 0 && str[i] % 2 == 0) {
+                    result.push("-" + str[i]);
+                } else {
+                    result.push(str[i]);
+                }
+
+            }
+           
+            document.write( result.join(' '));
+        }
+      
+    </script>
+</body>
+
+</html>
